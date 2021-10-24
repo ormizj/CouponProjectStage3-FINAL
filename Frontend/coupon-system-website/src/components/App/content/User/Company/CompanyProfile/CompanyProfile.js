@@ -9,6 +9,7 @@ import { isEmail } from '../../../../../../utils/checkUtil'
 
 export default function CompanyProfile() {
 
+    const isEmail = isEmail()
     const [company, setCompany] = useState({ email: '', name: '', password: '', id: '' })
 
     const getCompanyDetails = () => {
@@ -122,7 +123,7 @@ export default function CompanyProfile() {
                                                 <input
                                                     value={values.email}
                                                     onChange={handleChange}
-                                                    pattern={isEmail()}
+                                                    pattern={isEmail}
                                                     type='email'
                                                     title={values.email}
                                                     name='email'

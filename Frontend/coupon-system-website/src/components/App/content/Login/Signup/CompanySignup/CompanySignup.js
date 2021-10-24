@@ -6,6 +6,8 @@ import { isEmail } from "./../../../../../../utils/checkUtil"
 
 export default function CompanySignup() {
 
+    const isEmail = isEmail()
+
     const closeDiv = () => {
         if (window.confirm('Are you sure you want to close this window?'))
             history.push('/login')
@@ -76,7 +78,7 @@ export default function CompanySignup() {
                                 <div className="input-group-text" id='CompanySignup-email-div' title='Email'>Email</div>
                                 <input
                                     onChange={handleChange}
-                                    pattern={isEmail()}
+                                    pattern={isEmail}
                                     title={values.email}
                                     name='email'
                                     className='form-control'

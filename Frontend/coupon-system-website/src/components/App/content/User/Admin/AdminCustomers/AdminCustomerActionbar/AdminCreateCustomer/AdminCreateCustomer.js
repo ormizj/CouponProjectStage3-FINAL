@@ -7,6 +7,8 @@ import { isEmail } from '../../../../../../../../utils/checkUtil'
 
 export default function AdminCreateCustomer(props) {
 
+    const isEmail = isEmail()
+
     const closeDiv = () => {
         if (window.confirm('Are you sure you want to close this window?'))
             history.push('/admin/customers')
@@ -92,7 +94,7 @@ export default function AdminCreateCustomer(props) {
                                 <div className="input-group-text" id='AdminAddCustomer-email-div' title='Email'>Email</div>
                                 <input
                                     onChange={handleChange}
-                                    pattern={isEmail()}
+                                    pattern={isEmail}
                                     type='email'
                                     title={values.email}
                                     name='email'

@@ -7,6 +7,7 @@ import { isEmail } from '../../../../../../../../utils/checkUtil'
 
 export default function AdminUpdateCompany(props) {
 
+    const isEmail = isEmail()
     let valid = true
     let currentRef
     let company
@@ -158,7 +159,7 @@ export default function AdminUpdateCompany(props) {
                                                         <input
                                                             value={values.email}
                                                             onChange={handleChange}
-                                                            pattern={isEmail()}
+                                                            pattern={isEmail}
                                                             type='email'
                                                             title={values.email}
                                                             name='email'
