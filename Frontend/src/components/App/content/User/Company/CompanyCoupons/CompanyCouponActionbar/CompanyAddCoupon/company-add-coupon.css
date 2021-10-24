@@ -1,0 +1,96 @@
+.CompanyAddCoupon-background{
+    margin-top: -6.15vh; /*Header height*/
+    width: 200vw;
+    height: 100vh;
+    z-index: 1;
+    opacity: 75%;
+    position: fixed;
+    background-color:black;
+    
+    animation: fadeIn 1.5s;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.75;
+    }
+}
+
+.CompanyAddCoupon{
+    z-index: 1;
+    margin-left: 25%;
+    margin-right: 25%;
+    position: fixed;
+    background-color: rgb(233,236,239);
+    width: 50vw;
+    animation: slideInDown 1.5s;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px black;
+    top: 50%;
+    transform: translateY(-50%);
+}
+@keyframes slideInDown {
+    from{
+    top:-100%;
+    }
+    to{
+     top: 50%;
+    }
+}
+
+.CompanyAddCoupon-title{
+margin-top: -26px;
+}
+
+
+.CompanyAddCoupon-close-div{
+    text-align: right;
+    margin-top: 2%;
+    padding-right: 2%;
+}
+#CompanyAddCoupon-close-button{
+     opacity: 50%;
+     border: black 0.2vh solid;
+ }
+#CompanyAddCoupon-close-button:hover{
+    opacity: 70%;
+}
+#CompanyAddCoupon-close-button:focus{
+    opacity: 100%;
+}
+
+#CompanyAddCoupon-title-div{
+    margin-left: -3px;
+    padding-right: 80.5px;
+}
+#CompanyAddCoupon-description-div{
+    padding-right:30px;
+    margin-left: -3px;
+}
+#CompanyAddCoupon-price-div{
+    padding-right: 42.5px;
+    margin-left: -3px;
+}
+#CompanyAddCoupon-start_date-div{
+    margin-left: -3px;
+}
+#CompanyAddCoupon-end_date-div{
+padding-right: 48.5px;
+}
+#CompanyAddCoupon-image-div{
+    padding-right: 34px;
+    margin-left: -3px;
+}
+#CompanyAddCoupon-category-div{
+    padding-right: 46.5px;
+    margin-left: -3px;
+}
+#CompanyAddCoupon-input{
+  border-radius: 0px;
+}
+.CompanyAddCoupon-div-seperator{
+   padding-top: 2%;
+}

@@ -1,0 +1,61 @@
+.CompanySignup-background{
+    width: 200vw;
+    height: 100vh;
+    z-index: 1;
+    opacity: 75%;
+    position: fixed;
+    background-color:black;
+}
+
+.CompanySignup{
+    z-index: 1;
+    margin-left: 35%;
+    margin-right: 35%;
+    position: fixed;
+    background-color: rgb(233,236,239);
+    width: 30vw;
+    overflow: auto;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px black;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.CompanySignup-title{
+margin-top: -26px;
+}
+
+
+.CompanySignup-close-div{
+    text-align: right;
+    margin-top: 2%;
+    padding-right: 2%;
+}
+#CompanySignup-close-button{
+     opacity: 50%;
+     border: black 0.2vh solid;
+ }
+#CompanySignup-close-button:hover{
+    opacity: 70%;
+}
+#CompanySignup-close-button:focus{
+    opacity: 100%;
+}
+
+#CompanySignup-name-div{
+    padding-right: 35.5px;
+    margin-left: -3px;
+}
+#CompanySignup-email-div{
+    padding-right: 40px; 
+    margin-left: -3px;
+}
+#CompanySignup-password-div{
+    margin-left: -3px;
+}
+#CompanySignup-name-input,#CompanySignup-email-input,#CompanySignup-password-input{
+  border-radius: 0px;
+}
+.CompanySignup-div-seperator{
+   padding-top: 2%;
+}

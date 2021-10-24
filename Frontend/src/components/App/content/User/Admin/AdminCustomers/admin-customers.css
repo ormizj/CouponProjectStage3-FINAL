@@ -1,0 +1,76 @@
+.AdminCustomers-table{
+    margin-left: 9.9%;
+    margin-right: 13.3%;
+    table-layout: fixed;
+    width: 79%;
+    user-select: none;
+}
+
+.AdminCustomers-table>tbody>tr>td {
+    padding: 0px; 
+}
+
+.AdminCustomers-table-header{
+    padding-right: 0.5%;
+    text-align:left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+.AdminCustomers-table-text-label,.AdminCustomers-table-id-label{
+    padding-left: 8px;
+    margin-bottom:-10px;
+    line-height: 4.4vh;
+    padding-right: 28px;
+    text-align:left;
+    width: 105%;
+    height: 5.1vh;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+}
+#AdminCustomers-table-password-label{
+padding-right: 41px !important;
+display:none;
+}
+#AdminCustomers-table-id-label{
+    padding-right: 15px!important;
+}
+.AdminCustomers-field-checkbox{
+    display: none;
+}
+
+.AdminCustomers-field-checkbox~*~* {
+    background-color:rgb(240,240,240);
+    box-shadow: -1px -1px 1px black, 1px 1px 1px black;
+}
+.AdminCustomers-field-checkbox:hover~*~*{
+  background-color:rgb(255,255,255);
+}
+.AdminCustomers-field-checkbox:checked~*~*  {
+    background-color:  rgb(0, 255, 0); ;
+} 
+.AdminCustomers-field-checkbox+*+*{
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+.AdminCustomers-field-checkbox+*+*+*+*+*{
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.AdminCustomers-table-tr-seperator{
+    height:15px
+}
+
+
+.AdminCustomers-table-id-label{
+    text-align:center
+}
+
+#AdminCustomers-table-header-id{
+    padding-left: 10px;
+}

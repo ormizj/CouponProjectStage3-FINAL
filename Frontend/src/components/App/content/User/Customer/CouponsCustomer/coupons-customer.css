@@ -1,0 +1,80 @@
+.CouponsCustomer-table{
+    margin-left: 9.9%;
+    margin-right: 13.3%;
+    table-layout: fixed;
+    width: 79%;
+    user-select: none;
+}
+
+.CouponsCustomer-table>tbody>tr>td {
+    padding: 0px; 
+}
+
+.CouponsCustomer-table-header{
+    padding-right: 0.5%;
+    text-align:left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+.CouponsCustomer-table-text-label{
+    padding-left: 8px;
+    margin-bottom:-10px;
+    line-height: 4.4vh;
+    padding-right: 23px;
+    text-align:left;
+    width: 105%;
+    height: 5.1vh;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+}
+#CouponsCustomer-table-description{
+    padding-right: 36px !important;
+}
+.CouponsCustomer-field-checkbox{
+    display: none;
+}
+
+.CouponsCustomer-field-checkbox~*~* {
+    background-color:rgb(240,240,240);
+    box-shadow: -1px -1px 1px black, 1px 1px 1px black;
+}
+.CouponsCustomer-field-checkbox:hover~*~*{
+  background-color:rgb(255,255,255);
+}
+.CouponsCustomer-field-checkbox:checked~*~*  {
+    background-color:  rgb(0, 255, 0);
+} 
+.CouponsCustomer-field-checkbox+*+*{
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+.CouponsCustomer-field-checkbox+*+*+*+*+*+*+*+*+*{
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.CouponsCustomer-table-tr-seperator{
+    height:15px
+}
+
+#CouponsCustomer-table-category{
+text-transform: lowercase;
+}
+#CouponsCustomer-table-category::first-letter{
+    text-transform: uppercase;
+}
+.CouponsCustomer-table-image{
+    background-image: url(../../../../../../assests/Small\ Coupon\ Project.png);
+    background-size: 100% 100%; 
+}
+
+.CouponsCustomer-table-image-div{
+    background-size: 100% 100%; 
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}

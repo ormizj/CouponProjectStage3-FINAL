@@ -1,0 +1,61 @@
+.CustomerSignup-background{
+    width: 200vw;
+    height: 100vh;
+    z-index: 1;
+    opacity: 75%;
+    position: fixed;
+    background-color:black;
+}
+
+.CustomerSignup{
+    z-index: 1;
+    margin-left: 32.5%;
+    margin-right: 32.5%;
+    position: fixed;
+    background-color: rgb(233,236,239);
+    width: 35vw;
+    overflow: auto;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px black;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.CustomerSignup-title{
+margin-top: -26px;
+}
+
+
+.CustomerSignup-close-div{
+    text-align: right;
+    margin-top: 2%;
+    padding-right: 2%;
+}
+#CustomerSignup-close-button{
+     opacity: 50%;
+     border: black 0.2vh solid;
+ }
+#CustomerSignup-close-button:hover{
+    opacity: 70%;
+}
+#CustomerSignup-close-button:focus{
+    opacity: 100%;
+}
+
+#CustomerSignup-first_name-div{
+    margin-left: -3px;
+}
+#CustomerSignup-email-div{
+    padding-right: 74.5px; 
+    margin-left: -3px;
+}
+#CustomerSignup-password-div{
+    padding-right: 46.5px; 
+    margin-left: -3px;
+}
+#CustomerSignup-last_name-input,#CustomerSignup-first_name-input,#CustomerSignup-email-input,#CustomerSignup-password-input{
+  border-radius: 0px;
+}
+.CustomerSignup-div-seperator{
+   padding-top: 2%;
+}

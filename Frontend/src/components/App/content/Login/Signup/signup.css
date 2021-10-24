@@ -1,0 +1,77 @@
+.Signup-background{
+    width: 200vw;
+    height: 100vh;
+    z-index: 1;
+    opacity: 75%;
+    position: fixed;
+    background-color:black;
+    animation: fadeIn 1.5s;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.75;
+    }
+}
+
+.Signup{
+    z-index: 1;
+    margin-left: 40%;
+    margin-right: 40%;
+    position: fixed;
+    background-color: rgb(233,236,239);
+    width: 20vw;
+    animation: slideInDown 1.5s;
+    overflow: auto;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px black;
+    top: 50%;
+    transform: translateY(-50%);
+}
+@keyframes slideInDown {
+    from{
+    top:-100%;
+    }
+    to{
+     top: 50%;
+    }
+}
+
+.Signup-title{
+margin-top: -26px;
+}
+
+
+.Signup-close-div{
+    text-align: right;
+    margin-top: 2%;
+    padding-right: 2%;
+}
+#Signup-close-button{
+     opacity: 50%;
+     border: black 0.2vh solid;
+ }
+#Signup-close-button:hover{
+    opacity: 70%;
+}
+#Signup-close-button:focus{
+    opacity: 100%;
+}
+
+#Signup-title-div{
+    margin-left: -3px;
+    padding-right: 80.5px;
+}
+
+#Signup-input{
+  border-radius: 0px;
+}
+.Signup-div-seperator{
+   padding-top: 2%;
+}
+
+#Signup-customer{
+    margin-right:20%
+}

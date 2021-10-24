@@ -1,0 +1,148 @@
+.CompanyUpdateCoupon-background{
+    margin-top: -6.15vh; /*Header height*/
+    width: 200vw;
+    height: 100vh;
+    z-index: 1;
+    opacity: 75%;
+    position: fixed;
+    background-color:black;
+    
+    animation: fadeIn 1.5s;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.75;
+    }
+}
+
+.CompanyUpdateCoupon{
+    z-index: 1;
+    margin-left: 20%;
+    margin-right: 20%;
+    position: fixed;
+    background-color: rgb(233,236,239);
+    width: 60vw;
+    animation: slideInDown 1.5s;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px black;
+    top: 50%;
+    transform: translateY(-50%);
+}
+@keyframes slideInDown {
+    from{
+    top:-100%;
+    }
+    to{
+     top: 50%;
+    }
+}
+
+.CompanyUpdateCoupon-table{
+    width: 100%;
+    
+ }
+
+.CompanyUpdateCoupon-title{
+    margin-top: -26px;
+}
+.CompanyUpdateCoupon-close-div{
+        text-align: right;
+        margin-top: 2%;
+        padding-right: 2%;
+}
+#CompanyUpdateCoupon-close-button{
+         opacity: 50%;
+         border: black 0.2vh solid;
+}
+#CompanyUpdateCoupon-close-button:hover{
+        opacity: 70%;
+}
+#CompanyUpdateCoupon-close-button:focus{
+        opacity: 100%;
+}
+.CompanyUpdateCoupon-div-seperator{
+    padding-top: 2%;
+ }
+
+#CompanyUpdateCoupon-title-div{
+    margin-left: -3px;
+    padding-right: 62.5px;
+    border-radius: 0px;
+}
+#CompanyUpdateCoupon-description-div{
+    margin-left: -3px;
+    border-radius: 0px;
+}
+#CompanyUpdateCoupon-amount-div{
+    padding-right: 35.5px;
+    margin-left: -3px;
+    border-radius: 0px;
+}
+#CompanyUpdateCoupon-date-div{
+    padding-right: 59px;
+    margin-left: -3px;
+     border-radius: 0px;
+}
+#CompanyUpdateCoupon-start_date-div{
+margin-left: 5px;
+ border-radius: 0px;
+}
+#CompanyUpdateCoupon-image-div{
+    padding-right: 16px;
+    margin-left: -3px;
+     border-radius: 0px;
+}
+#CompanyUpdateCoupon-category-div{
+    padding-right: 28.5px;
+    margin-left: -3px;
+     border-radius: 0px;
+}
+#CompanyUpdateCoupon-input{
+  border-radius: 0px;
+}
+#CompanyUpdateCoupon-input{
+    margin-left: -3px;
+}
+#CompanyUpdateCoupon-price-div{
+    margin-left: -3px;
+}
+#CompanyUpdateCoupon-from-div{
+padding-right: 40px;
+margin-left: -3px;
+}
+
+#CompanyUpdateCoupon-from-input{
+    background-color: rgb(245, 245, 245);
+    margin-left: -3px;
+}
+#CompanyUpdateCoupon-from-amount-input{
+    background-color: rgb(245, 245, 245);
+    padding-left: 54px;
+    text-align: right;
+}
+
+#CompanyUpdateCoupon-to-wide-input{
+    border-radius: 0px;
+    margin-left: -3px;
+  margin-right: -1.2px;
+}
+#CompanyUpdateCoupon-to-left-input{
+    border-radius: 0px;
+    margin-left: -3px;
+}
+#CompanyUpdateCoupon-to-left-div{
+    border-radius: 0px;
+    margin-left: -3px;
+}
+#CompanyUpdateCoupon-to-right-input{
+    border-radius: 0px;
+    margin-right: -1.2px;
+}
+#CompanyUpdateCoupon-to-price-div{
+    padding-right: 29px;
+}
+

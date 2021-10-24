@@ -1,0 +1,79 @@
+.CustomerCoupons-table{
+    margin-left: 9.9%;
+    margin-right: 13.3%;
+    table-layout: fixed;
+    width: 79%;
+    user-select: none;
+}
+
+.CustomerCoupons-table>tbody>tr>td {
+    padding: 0px; 
+}
+
+.CustomerCoupons-table-header{
+    padding-right: 0.5%;
+    text-align:left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+.CustomerCoupons-table-text-label{
+    padding-left: 8px;
+    margin-bottom:-10px;
+    line-height: 4.4vh;
+    padding-right: 23px;
+    text-align:left;
+    width: 105%;
+    height: 5.1vh;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#CustomerCoupons-table-description{
+    padding-right: 36px !important;
+}
+.CustomerCoupons-input{
+    display: none;
+}
+
+.CustomerCoupons-input~*~* {
+    background-color:rgb(240,240,240);
+    box-shadow: -1px -1px 1px black, 1px 1px 1px black;
+}
+.CustomerCoupons-input:hover~*~*{
+  background-color:rgb(255,255,255);
+}
+.CustomerCoupons-input+*+*{
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+.CustomerCoupons-input+*+*+*+*+*+*+*+*+*{
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+
+#CustomerCoupons-table-category{
+text-transform: lowercase;
+}
+#CustomerCoupons-table-category::first-letter{
+    text-transform: uppercase;
+}
+
+.CustomerCoupons-table-tr-seperator{
+    height:15px
+}
+
+.CustomerCoupons-table-image{
+    background-image: url(../../../../../../assests/Small\ Coupon\ Project.png);
+    background-size: 100% 100%; 
+}
+
+.CustomerCoupons-table-image-div{
+    background-size: 100% 100%; 
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}

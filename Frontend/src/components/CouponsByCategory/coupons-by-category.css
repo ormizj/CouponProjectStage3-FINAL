@@ -1,0 +1,82 @@
+.CouponsByCategory-background{
+    margin-top: -6.15vh; /*Header height*/
+    width: 200vw;
+    height: 100vh;
+    z-index: 1;
+    opacity: 75%;
+    position: fixed;
+    background-color:black;
+    
+    animation: fadeIn 1.5s;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.75;
+    }
+}
+
+.CouponsByCategory{
+    z-index: 1;
+    margin-left: 30%;
+    margin-right: 30%;
+    position: fixed;
+    background-color: rgb(233,236,239);
+    width: 40vw;
+    animation: slideInDown 1.5s;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px black;
+    top: 50%;
+    transform: translateY(-50%);
+}
+@keyframes slideInDown {
+    from{
+    top:-100%;
+    }
+    to{
+     top: 50%;
+    }
+}
+
+.CouponsByCategory-title{
+margin-top: -26px;
+}
+
+
+.CouponsByCategory-close-div{
+    text-align: right;
+    margin-top: 2%;
+    padding-right: 2%;
+}
+#CouponsByCategory-close-button{
+     opacity: 50%;
+     border: black 0.2vh solid;
+ }
+#CouponsByCategory-close-button:hover{
+    opacity: 70%;
+}
+#CompanyAddCoupon-close-button:focus{
+    opacity: 100%;
+}
+
+#CouponsByCategory-title-div{
+    margin-left: -3px;
+    padding-right: 80.5px;
+}
+
+.CouponsByCategory-div-seperator{
+    padding-top: 2%;
+ }
+
+ .CouponsByCategory-div-title-seperator{
+    padding-top: 1%;
+ }
+
+ #CouponsByCategory-button{
+     margin-right: 10px;
+     margin-top: 10px;
+     width: 150px;
+ }

@@ -1,0 +1,81 @@
+.AdminAddCompany-background{
+    margin-top: -6.15vh; /*Header height*/
+    width: 200vw;
+    height: 100vh;
+    z-index: 1;
+    opacity: 75%;
+    position: fixed;
+    background-color:black;
+    
+    animation: fadeIn 1.5s;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.75;
+    }
+}
+
+.AdminAddCompany{
+    z-index: 1;
+    margin-left: 35%;
+    margin-right: 35%;
+    position: fixed;
+    background-color: rgb(233,236,239);
+    width: 30vw;
+    animation: slideInDown 1.5s;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px black;
+    top: 50%;
+    transform: translateY(-50%);
+}
+@keyframes slideInDown {
+    from{
+    top:-100%;
+    }
+    to{
+     top: 50%;
+    }
+}
+
+.AdminAddCompany-title{
+margin-top: -26px;
+}
+
+
+.AdminAddCompany-close-div{
+    text-align: right;
+    margin-top: 2%;
+    padding-right: 2%;
+}
+#AdminAddCompany-close-button{
+     opacity: 50%;
+     border: black 0.2vh solid;
+ }
+#AdminAddCompany-close-button:hover{
+    opacity: 70%;
+}
+#AdminAddCompany-close-button:focus{
+    opacity: 100%;
+}
+
+#AdminAddCompany-name-div{
+    padding-right: 35.5px;
+    margin-left: -3px;
+}
+#AdminAddCompany-email-div{
+    padding-right: 40px; 
+    margin-left: -3px;
+}
+#AdminAddCompany-password-div{
+    margin-left: -3px;
+}
+#AdminAddCompany-name-input,#AdminAddCompany-email-input,#AdminAddCompany-password-input{
+  border-radius: 0px;
+}
+.AdminAddCompany-div-seperator{
+   padding-top: 2%;
+}

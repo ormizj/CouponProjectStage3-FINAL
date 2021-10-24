@@ -1,0 +1,54 @@
+.Header{
+    background: rgb(40,40,40);
+    height: 6.15vh;
+    width: 100%;
+    position: relative;
+    box-shadow: 1px -1px 10px rgb(40,40,40);
+    z-index: 1;
+    user-select: none;
+    font-size: 1.85vh;
+}
+
+.Header-logout{
+    margin-top: 1.075vh;
+	background-color:rgb(40,40,40);
+    border:0.2vh solid rgb(129,180,65);
+	cursor:pointer;
+	color:rgb(249,254,254);
+	font-family: sans-serif;
+    font-size: 1.85vh;
+	font-weight:700;
+    border-radius: 5px;
+    height: 4vh;
+    width: 10vh;
+    box-shadow: 0px 0px 3px black; 
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+
+.Header-logout:hover{
+	color:rgb(152,152,152);
+}
+
+.Header-button-div{
+    text-align: right;
+}
+
+.Header-profile {
+	background-color:rgb(40,40,40);
+    border:0.2vh solid rgb(129,180,65);
+	cursor:pointer;
+	color:rgb(249,254,254);
+	font-family: sans-serif;
+    font-size: 1.85vh;
+	font-weight:bold;
+    border-radius: 5px;
+    height: 4vh;
+    width: 10vh;
+    box-shadow: 0px 0px 3px black; 
+}
+
+.Header-profile:hover{
+	color:rgb(152,152,152);
+}

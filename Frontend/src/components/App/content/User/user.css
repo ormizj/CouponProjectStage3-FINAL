@@ -1,0 +1,32 @@
+.User-background{
+    transition: 1.5s;
+    background-size: cover;
+    min-height: 88.88vh;
+    width: 100%;
+    position: relative;
+    animation: slideInLeft 1.5s backwards;
+    background-repeat: repeat-y;
+    background-color:rgb(20,20,20);
+}
+#User-opacity{
+    background-image: url('./Subdued\ User\ Background.jpg') !important;
+    animation: none;
+    transition: none;
+}
+
+@keyframes slideInLeft {
+    from{
+        left:-100%;
+    }
+    to{
+     left: 0%;
+    }
+}
+
+.user-home-image{
+    user-select: none;
+    margin-top: 26.15vh;
+    margin-left:29.46vw;
+    margin-right: 20vw;
+    width: 50vw;
+}

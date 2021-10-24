@@ -1,0 +1,80 @@
+.AdminLogs-table{
+    margin-left: 9.9%;
+    margin-right: 13.3%;
+    table-layout: fixed;
+    width: 79%;
+    user-select: none;
+}
+
+.AdminLogs-table>tbody>tr>td {
+    padding: 0px; 
+}
+
+.AdminLogs-table-header{
+    padding-right: 0.5%;
+    text-align:left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+.AdminLogs-table-text-label,.AdminLogs-table-id-label{
+    padding-left: 8px;
+    margin-bottom:-10px;
+    line-height: 4.4vh;
+    padding-right: 28px;
+    text-align:left;
+    width: 105%;
+    height: 5.1vh;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+#AdminLogs-table-enum-label{
+    padding-right: 20px !important;
+    text-transform: lowercase;
+}
+#AdminLogs-table-id-label{
+    padding-right: 15px!important;
+}
+.AdminLogs-field-checkbox{
+    display: none;
+}
+
+.AdminLogs-field-checkbox~*~* {
+    background-color:rgb(240,240,240);
+    box-shadow: -1px -1px 1px black, 1px 1px 1px black;
+}
+.AdminLogs-field-checkbox:hover~*~*{
+  background-color:rgb(255,255,255);
+}
+.AdminLogs-field-checkbox:checked~*~*  {
+    background-color:  rgb(0, 255, 0); ;
+} 
+.AdminLogs-field-checkbox+*+*{
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+.AdminLogs-field-checkbox+*+*+*+*+*+*+*+*+*+*+*{
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.AdminLogs-table-tr-seperator{
+    height: 15px;
+}
+
+.AdminLogs-table-id-label{
+    text-align:center
+}
+
+#AdminLogs-table-enum-label::first-letter{
+    text-transform: uppercase;
+}
+
+#AdminLogs-table-header-id{
+    padding-left: 10px;
+}

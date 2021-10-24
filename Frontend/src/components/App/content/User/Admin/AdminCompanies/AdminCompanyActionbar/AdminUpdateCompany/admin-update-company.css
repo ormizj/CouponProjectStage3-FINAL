@@ -1,0 +1,99 @@
+.AdminUpdateCompany-background{
+    margin-top: -6.15vh; /*Header height*/
+    width: 200vw;
+    height: 100vh;
+    z-index: 1;
+    opacity: 75%;
+    position: fixed;
+    background-color:black;
+    
+    animation: fadeIn 1.5s;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.75;
+    }
+}
+
+.AdminUpdateCompany{
+    z-index: 1;
+    margin-left: 27.5%;
+    margin-right: 27.5%;
+    position: fixed;
+    background-color: rgb(233,236,239);
+    width: 45vw;
+    animation: slideInDown 1.5s;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px black;
+    top: 50%;
+    transform: translateY(-50%);
+}
+@keyframes slideInDown {
+    from{
+    top:-100%;
+    }
+    to{
+     top: 50%;
+    }
+}
+
+.AdminUpdateCompany-table{
+    width: 100%;
+ }
+
+.AdminUpdateCompany-close-div{
+        text-align: right;
+        margin-top: 2%;
+        padding-right: 2%;
+}
+#AdminUpdateCompany-close-button{
+         opacity: 50%;
+         border: black 0.2vh solid;
+}
+#AdminUpdateCompany-close-button:hover{
+        opacity: 70%;
+}
+#AdminUpdateCompany-close-button:focus{
+        opacity: 100%;
+}
+.AdminUpdateCompany-div-seperator{
+    padding-top: 2%;
+}
+
+#AdminUpdateCompany-from-name-input,#AdminUpdateCompany-from-email-input,#AdminUpdateCompany-from-password-input{
+    background-color: rgb(245, 245, 245);
+    margin-left: -3px;
+}
+
+
+#AdminUpdateCompany-to-email-input,#AdminUpdateCompany-to-password-input{
+    border-radius: 0px;
+    margin-left: -3px;
+  margin-right: -1.2px;
+}
+#AdminUpdateCompany-to-name-input{
+    border-radius: 0px;
+    margin-right: -1.2px;
+    margin-left: -3px;
+}
+.AdminUpdateCompany-title{
+    margin-top: -26px;
+}
+#AdminUpdateCompany-name-div{
+    border-radius: 0px;
+    padding-right: 36px;
+}
+#AdminUpdateCompany-email-div{
+    border-radius: 0px;
+    padding-right: 40.2px;
+}
+#AdminUpdateCompany-password-div{
+    border-radius: 0px;
+}
+#AdminUpdateCompany-name-div{
+    margin-left: -3px;
+}
