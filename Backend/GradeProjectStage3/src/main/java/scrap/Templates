@@ -1,0 +1,36 @@
+CustomerDuplicateValueException
+
+if a {@code Customer} {@code Entity}
+	 *                                         with the same {@code email} already
+	 *                                         exists.
+	 
+	 
+CustomerNullValueException
+
+if the {@code Customer}
+	 *                                         {@code Entity} has any {@code null}
+	 *                                         values in it.
+	 
+CustomerIsNullException
+
+if the <code>Customer</code> value is
+	 *                                         {@code null}
+	 
+	 
+	 
+CompanyNullValueException
+
+if the {@code Company} {@code Entity}
+	 *                                        has any {@code null} values in it.
+	 
+CompanyDuplicateValueException 
+
+if a {@code Company} {@code Entity}
+	 *                                        with the same {@code name} or
+	 *                                        {@code email} already exists.
+	 
+CompanyIsNullException 
+
+if the {@code Company} {@code Entity}
+	 *                                        is {@code null}
+	 

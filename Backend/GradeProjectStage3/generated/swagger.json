@@ -1,0 +1,1559 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "Api Documentation",
+    "version" : "1.0",
+    "title" : "Api Documentation",
+    "termsOfService" : "urn:tos",
+    "contact" : { },
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "tags" : [ {
+    "name" : "admin-controller",
+    "description" : "Admin Controller"
+  }, {
+    "name" : "company-controller",
+    "description" : "Company Controller"
+  }, {
+    "name" : "customer-controller",
+    "description" : "Customer Controller"
+  }, {
+    "name" : "login-manager-controller",
+    "description" : "Login Manager Controller"
+  } ],
+  "paths" : {
+    "/admin/add-customer" : {
+      "post" : {
+        "tags" : [ "admin-controller" ],
+        "summary" : "Add Customer",
+        "description" : "Adds a Customer and returns it\n\n[id - unnecessary]",
+        "operationId" : "addCustomerUsingPOST",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "customerReq",
+          "description" : "customerReq",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Admin"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Succesful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Customer"
+            }
+          },
+          "201" : {
+            "description" : "Created"
+          },
+          "400" : {
+            "description" : "Customer addition failed",
+            "schema" : {
+              "$ref" : "#/definitions/ExceptionResponse"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        }
+      }
+    },
+    "/admin/clear-logs" : {
+      "delete" : {
+        "tags" : [ "admin-controller" ],
+        "summary" : "Clear Logs",
+        "description" : "Deletes all Logs",
+        "operationId" : "clearLogsUsingDELETE",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "Succesful operation",
+            "schema" : {
+              "$ref" : "#/definitions/SuccessResponse"
+            }
+          },
+          "204" : {
+            "description" : "No Content"
+          },
+          "400" : {
+            "description" : "Logs deletion failed",
+            "schema" : {
+              "$ref" : "#/definitions/ExceptionResponse"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          }
+        }
+      }
+    },
+    "/admin/create-company" : {
+      "post" : {
+        "tags" : [ "admin-controller" ],
+        "summary" : "Create Company",
+        "description" : "Creates a Company and returns it\n\n[id - unnecessary]",
+        "operationId" : "createCompanyUsingPOST",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "companyReq",
+          "description" : "companyReq",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Admin"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Succesful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Company"
+            }
+          },
+          "201" : {
+            "description" : "Created"
+          },
+          "400" : {
+            "description" : "Company creation failed",
+            "schema" : {
+              "$ref" : "#/definitions/ExceptionResponse"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        }
+      }
+    },
+    "/admin/delete-company" : {
+      "delete" : {
+        "tags" : [ "admin-controller" ],
+        "summary" : "Delete Company",
+        "description" : "Deletes a Company and his Coupons",
+        "operationId" : "deleteCompanyUsingDELETE",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "companyId",
+          "in" : "query",
+          "description" : "ID of the Company to delete",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64",
+          "x-example" : 0
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Succesful operation",
+            "schema" : {
+              "$ref" : "#/definitions/SuccessResponse"
+            }
+          },
+          "204" : {
+            "description" : "No Content"
+          },
+          "400" : {
+            "description" : "Company deletion failed",
+            "schema" : {
+              "$ref" : "#/definitions/ExceptionResponse"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          }
+        }
+      }
+    },
+    "/admin/delete-customer" : {
+      "delete" : {
+        "tags" : [ "admin-controller" ],
+        "summary" : "Delete Customer",
+        "description" : "Deletes a Customer",
+        "operationId" : "deleteCustomerUsingDELETE",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "customerId",
+          "in" : "query",
+          "description" : "ID of the Customer to delete",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64",
+          "x-example" : 0
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Succesful operation",
+            "schema" : {
+              "$ref" : "#/definitions/SuccessResponse"
+            }
+          },
+          "204" : {
+            "description" : "No Content"
+          },
+          "400" : {
+            "description" : "Customer deletion failed",
+            "schema" : {
+              "$ref" : "#/definitions/ExceptionResponse"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          }
+        }
+      }
+    },
+    "/admin/get-companies" : {
+      "get" : {
+        "tags" : [ "admin-controller" ],
+        "summary" : "Get Companies",
+        "description" : "Get all Companies",
+        "operationId" : "getCompaniesUsingGET",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "Succesful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Company"
+            }
+          },
+          "400" : {
+            "description" : "No Companies found",
+            "schema" : {
+              "$ref" : "#/definitions/ExceptionResponse"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        }
+      }
+    },
+    "/admin/get-company" : {
+      "get" : {
+        "tags" : [ "admin-controller" ],
+        "summary" : "Get Company",
+        "description" : "Get Company by id",
+        "operationId" : "getCompanyUsingGET",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "description" : "ID of the Company to return",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64",
+          "x-example" : 0
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Succesful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Company"
+            }
+          },
+          "400" : {
+            "description" : "Company not found",
+            "schema" : {
+              "$ref" : "#/definitions/ExceptionResponse"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        }
+      }
+    },
+    "/admin/get-company-email" : {
+      "get" : {
+        "tags" : [ "admin-controller" ],
+        "summary" : "Get Company email",
+        "description" : "Get Company by email",
+        "operationId" : "getCompanyUsingGET_1",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "email",
+          "in" : "query",
+          "description" : "Email of the Company to return",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Succesful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Company"
+            }
+          },
+          "400" : {
+            "description" : "Company not found",
+            "schema" : {
+              "$ref" : "#/definitions/ExceptionResponse"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        }
+      }
+    },
+    "/admin/get-coupons" : {
+      "get" : {
+        "tags" : [ "admin-controller" ],
+        "summary" : "Get Coupons",
+        "description" : "Get all Coupons",
+        "operationId" : "getCouponsUsingGET",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "Succesful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Coupon"
+            }
+          },
+          "400" : {
+            "description" : "No Coupons found",
+            "schema" : {
+              "$ref" : "#/definitions/ExceptionResponse"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        }
+      }
+    },
+    "/admin/get-customer" : {
+      "get" : {
+        "tags" : [ "admin-controller" ],
+        "summary" : "Get Customer",
+        "description" : "Get Customer by id",
+        "operationId" : "getCustomerUsingGET",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "description" : "ID of the Customer to return",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64",
+          "x-example" : 0
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Customer"
+            }
+          },
+          "400" : {
+            "description" : "Customer not found",
+            "schema" : {
+              "$ref" : "#/definitions/ExceptionResponse"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        }
+      }
+    },
+    "/admin/get-customer-email" : {
+      "get" : {
+        "tags" : [ "admin-controller" ],
+        "summary" : "Get Customer email",
+        "description" : "Get Customer by email",
+        "operationId" : "getCustomerUsingGET_1",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "email",
+          "in" : "query",
+          "description" : "Email of the Customer to return",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Customer"
+            }
+          },
+          "400" : {
+            "description" : "Customer not found",
+            "schema" : {
+              "$ref" : "#/definitions/ExceptionResponse"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        }
+      }
+    },
+    "/admin/get-customers" : {
+      "get" : {
+        "tags" : [ "admin-controller" ],
+        "summary" : "Get Customers",
+        "description" : "Get all Customers",
+        "operationId" : "getCustomersUsingGET",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "Succesful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Customer"
+            }
+          },
+          "400" : {
+            "description" : "No Customers found",
+            "schema" : {
+              "$ref" : "#/definitions/ExceptionResponse"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        }
+      }
+    },
+    "/admin/get-logs" : {
+      "get" : {
+        "tags" : [ "admin-controller" ],
+        "summary" : "Get Logs",
+        "description" : "Get All Logs",
+        "operationId" : "getLogsUsingGET",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "Succesful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Log"
+            }
+          },
+          "400" : {
+            "description" : "No Logs found",
+            "schema" : {
+              "$ref" : "#/definitions/ExceptionResponse"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        }
+      }
+    },
+    "/admin/update-company" : {
+      "put" : {
+        "tags" : [ "admin-controller" ],
+        "summary" : "Update Company",
+        "description" : "Updates a Company and returns it",
+        "operationId" : "updateCompanyUsingPUT",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "companyReq",
+          "description" : "companyReq",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Admin"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Succesful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Company"
+            }
+          },
+          "201" : {
+            "description" : "Created"
+          },
+          "400" : {
+            "description" : "Company update failed",
+            "schema" : {
+              "$ref" : "#/definitions/ExceptionResponse"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        }
+      }
+    },
+    "/admin/update-customer" : {
+      "put" : {
+        "tags" : [ "admin-controller" ],
+        "summary" : "Update Customer",
+        "description" : "Updates a Customer and returns it",
+        "operationId" : "updateCustomerUsingPUT",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "customerReq",
+          "description" : "customerReq",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Admin"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Succesful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Customer"
+            }
+          },
+          "201" : {
+            "description" : "Created"
+          },
+          "400" : {
+            "description" : "Customer update failed",
+            "schema" : {
+              "$ref" : "#/definitions/ExceptionResponse"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        }
+      }
+    },
+    "/company/add-coupon" : {
+      "post" : {
+        "tags" : [ "company-controller" ],
+        "summary" : "Add Coupon",
+        "description" : "Creates a Coupon for the Company and returns it\n\n[id - unnecessary]",
+        "operationId" : "addCouponUsingPOST",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "couponReq",
+          "description" : "couponReq",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/CouponRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Succesful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Coupon"
+            }
+          },
+          "201" : {
+            "description" : "Created"
+          },
+          "400" : {
+            "description" : "Coupon creation failed",
+            "schema" : {
+              "$ref" : "#/definitions/ExceptionResponse"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        }
+      }
+    },
+    "/company/delete-coupon" : {
+      "delete" : {
+        "tags" : [ "company-controller" ],
+        "summary" : "Delete Coupon",
+        "description" : "Deletes a Coupon from the Company",
+        "operationId" : "deleteCouponUsingDELETE",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "couponId",
+          "in" : "query",
+          "description" : "ID of the Coupon to delete",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64",
+          "x-example" : 0
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Succesful operation",
+            "schema" : {
+              "$ref" : "#/definitions/SuccessResponse"
+            }
+          },
+          "204" : {
+            "description" : "No Content"
+          },
+          "400" : {
+            "description" : "Coupon deletion failed",
+            "schema" : {
+              "$ref" : "#/definitions/ExceptionResponse"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          }
+        }
+      }
+    },
+    "/company/get-coupons" : {
+      "get" : {
+        "tags" : [ "company-controller" ],
+        "summary" : "Get Company Coupons",
+        "description" : "Get Company owned Coupons",
+        "operationId" : "getCompanyCouponsUsingGET",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "Succesful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Coupon"
+            }
+          },
+          "400" : {
+            "description" : "Company Coupons not found",
+            "schema" : {
+              "$ref" : "#/definitions/ExceptionResponse"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        }
+      }
+    },
+    "/company/get-coupons-category" : {
+      "get" : {
+        "tags" : [ "company-controller" ],
+        "summary" : "Get Company Coupons category",
+        "description" : "Get Company owned Coupons by category",
+        "operationId" : "getCompanyCouponsUsingGET_1",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "category",
+          "in" : "query",
+          "description" : "Category type of the Coupon",
+          "required" : true,
+          "type" : "string",
+          "enum" : [ "ATTRACTION", "AUTOMOBILE", "ELECTRICITY", "FOOD", "GAMING", "RESTAURANT", "SPORT", "VACATION" ]
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Succesful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Coupon"
+            }
+          },
+          "400" : {
+            "description" : "Company Coupons not found",
+            "schema" : {
+              "$ref" : "#/definitions/ExceptionResponse"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        }
+      }
+    },
+    "/company/get-coupons-max-price" : {
+      "get" : {
+        "tags" : [ "company-controller" ],
+        "summary" : "Get Company Coupons maximum price",
+        "description" : "Get Company owned Coupons by maximum price",
+        "operationId" : "getCompanyCouponsUsingGET_2",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "maxPrice",
+          "in" : "query",
+          "description" : "Maximum price of the Coupon",
+          "required" : true,
+          "type" : "number",
+          "format" : "double"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Succesful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Coupon"
+            }
+          },
+          "400" : {
+            "description" : "Company Coupons not found",
+            "schema" : {
+              "$ref" : "#/definitions/ExceptionResponse"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        }
+      }
+    },
+    "/company/get-details" : {
+      "get" : {
+        "tags" : [ "company-controller" ],
+        "summary" : "Get Details",
+        "description" : "Returns the information of the Company",
+        "operationId" : "getCompanyDetailsUsingGET",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "Succesful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Company"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        }
+      }
+    },
+    "/company/update-coupon" : {
+      "put" : {
+        "tags" : [ "company-controller" ],
+        "summary" : "Update Coupon",
+        "description" : "Updates a Coupon from the Company and returns it",
+        "operationId" : "updateCouponUsingPUT",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "couponReq",
+          "description" : "couponReq",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/CouponRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Succesful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Coupon"
+            }
+          },
+          "201" : {
+            "description" : "Created"
+          },
+          "400" : {
+            "description" : "Coupon update failed",
+            "schema" : {
+              "$ref" : "#/definitions/ExceptionResponse"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        }
+      }
+    },
+    "/customer/get-coupons" : {
+      "get" : {
+        "tags" : [ "customer-controller" ],
+        "summary" : "Get Customer Coupons",
+        "description" : "Get Customer purchased Coupons",
+        "operationId" : "getCustomerCouponsUsingGET",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "Succesful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Coupon"
+            }
+          },
+          "400" : {
+            "description" : "Customer Coupons not found",
+            "schema" : {
+              "$ref" : "#/definitions/ExceptionResponse"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        }
+      }
+    },
+    "/customer/get-coupons-category" : {
+      "get" : {
+        "tags" : [ "customer-controller" ],
+        "summary" : "Get Customer Coupons category",
+        "description" : "Get Customer purchased Coupons by category",
+        "operationId" : "getCustomerCouponsUsingGET_1",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "category",
+          "in" : "query",
+          "description" : "Category type of the Coupon",
+          "required" : true,
+          "type" : "string",
+          "enum" : [ "ATTRACTION", "AUTOMOBILE", "ELECTRICITY", "FOOD", "GAMING", "RESTAURANT", "SPORT", "VACATION" ]
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Succesful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Coupon"
+            }
+          },
+          "400" : {
+            "description" : "Customer Coupons not found",
+            "schema" : {
+              "$ref" : "#/definitions/ExceptionResponse"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        }
+      }
+    },
+    "/customer/get-coupons-max-price" : {
+      "get" : {
+        "tags" : [ "customer-controller" ],
+        "summary" : "Get Customer Coupons maximum price",
+        "description" : "Get Customer purchased Coupons by maximum price",
+        "operationId" : "getCustomerCouponsUsingGET_2",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "maxPrice",
+          "in" : "query",
+          "description" : "Maximum price of the Coupon",
+          "required" : true,
+          "type" : "number",
+          "format" : "double"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Succesful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Coupon"
+            }
+          },
+          "400" : {
+            "description" : "Customer Coupons not found",
+            "schema" : {
+              "$ref" : "#/definitions/ExceptionResponse"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        }
+      }
+    },
+    "/customer/get-details" : {
+      "get" : {
+        "tags" : [ "customer-controller" ],
+        "summary" : "Get Details",
+        "description" : "Returns the information of the Customer",
+        "operationId" : "getCustomerDetailsUsingGET",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "Succesful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Customer"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        }
+      }
+    },
+    "/customer/purchase-coupon" : {
+      "put" : {
+        "tags" : [ "customer-controller" ],
+        "summary" : "Purchase Coupon",
+        "description" : "Purchases a Coupon for the Customer",
+        "operationId" : "purchaseCouponUsingPUT",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "couponId",
+          "in" : "query",
+          "description" : "ID of the Coupon to purchase",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Succesful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Coupon"
+            }
+          },
+          "201" : {
+            "description" : "Created"
+          },
+          "400" : {
+            "description" : "Customer Coupon purchase failed",
+            "schema" : {
+              "$ref" : "#/definitions/ExceptionResponse"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        }
+      }
+    },
+    "/login-manager/login" : {
+      "post" : {
+        "tags" : [ "login-manager-controller" ],
+        "summary" : "Login",
+        "description" : "Login based on user type",
+        "operationId" : "loginUsingPOST",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "email",
+          "in" : "query",
+          "description" : "Email of the user",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "password",
+          "in" : "query",
+          "description" : "Password of the user",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "userType",
+          "in" : "query",
+          "description" : "Type of the user",
+          "required" : true,
+          "type" : "string",
+          "enum" : [ "ADMIN", "COMPANY", "CUSTOMER" ]
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Succesful operation",
+            "schema" : {
+              "$ref" : "#/definitions/JwtResponse"
+            }
+          },
+          "201" : {
+            "description" : "Created"
+          },
+          "400" : {
+            "description" : "Login failed",
+            "schema" : {
+              "$ref" : "#/definitions/ExceptionResponse"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        }
+      }
+    },
+    "/login-manager/register-company" : {
+      "post" : {
+        "tags" : [ "login-manager-controller" ],
+        "summary" : "Register Company",
+        "description" : "Registers a Company and returns it\n\n[id - unnecessary]",
+        "operationId" : "createCompanyUsingPOST_1",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "companyReq",
+          "description" : "companyReq",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Admin"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Succesful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Company"
+            }
+          },
+          "201" : {
+            "description" : "Created"
+          },
+          "400" : {
+            "description" : "Company creation failed",
+            "schema" : {
+              "$ref" : "#/definitions/ExceptionResponse"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        }
+      }
+    },
+    "/login-manager/register-customer" : {
+      "post" : {
+        "tags" : [ "login-manager-controller" ],
+        "summary" : "Register Customer",
+        "description" : "Registers a Customer and returns it\n\n[id - unnecessary]",
+        "operationId" : "addCustomerUsingPOST_1",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "customerReq",
+          "description" : "customerReq",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Admin"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Succesful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Customer"
+            }
+          },
+          "201" : {
+            "description" : "Created"
+          },
+          "400" : {
+            "description" : "Customer addition failed",
+            "schema" : {
+              "$ref" : "#/definitions/ExceptionResponse"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Admin" : {
+      "type" : "object",
+      "properties" : {
+        "email" : {
+          "type" : "string",
+          "example" : "email@email.com",
+          "description" : "Min=1, Max=255 (spaces gets removed).\nMust be in email format.\nGets lower-cased."
+        },
+        "firstName" : {
+          "type" : "string",
+          "description" : "Min=1, Max=255 (gets trimmed)."
+        },
+        "id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "example" : 0,
+          "description" : "Auto-incremented."
+        },
+        "lastName" : {
+          "type" : "string",
+          "description" : "Min=1, Max=255 (gets trimmed)."
+        },
+        "password" : {
+          "type" : "string",
+          "description" : "Min=1, Max=255."
+        }
+      },
+      "title" : "Admin",
+      "description" : "Email between users must be unique.\n\nManages Companies.\nManages Customers\nManages Logs."
+    },
+    "Company" : {
+      "type" : "object",
+      "properties" : {
+        "coupons" : {
+          "type" : "array",
+          "description" : "Only as response.",
+          "items" : {
+            "$ref" : "#/definitions/Coupon"
+          }
+        },
+        "email" : {
+          "type" : "string",
+          "example" : "email@email.com",
+          "description" : "Min=1, Max=255 (spaces gets removed).\nMust be in email format.\nGets lower-cased."
+        },
+        "id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "Auto-incremented."
+        },
+        "name" : {
+          "type" : "string",
+          "description" : "Min=1, Max=255 (gets trimmed)."
+        },
+        "password" : {
+          "type" : "string",
+          "description" : "Min=1, Max=255."
+        },
+        "role" : {
+          "type" : "string",
+          "enum" : [ "ADMIN", "COMPANY", "CUSTOMER" ]
+        }
+      },
+      "title" : "Company",
+      "description" : "Email between users must be uinque.\nname between Companies must be unique.\n\nOwns and manages coupons."
+    },
+    "Coupon" : {
+      "type" : "object",
+      "properties" : {
+        "amount" : {
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "Min=0, Max=2147483647."
+        },
+        "category" : {
+          "type" : "string",
+          "enum" : [ "ATTRACTION", "AUTOMOBILE", "ELECTRICITY", "FOOD", "GAMING", "RESTAURANT", "SPORT", "VACATION" ]
+        },
+        "description" : {
+          "type" : "string",
+          "description" : "Min=1, Max=255 (gets trimmed)."
+        },
+        "endDate" : {
+          "type" : "string",
+          "format" : "date",
+          "example" : "yyyy-mm-dd",
+          "description" : "Cannot be in the past."
+        },
+        "id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "Auto-incremented."
+        },
+        "image" : {
+          "type" : "string",
+          "description" : "Min=1, Max=255 (spaces gets removed)."
+        },
+        "price" : {
+          "type" : "number",
+          "format" : "double",
+          "description" : "Min=0, Max=∞."
+        },
+        "startDate" : {
+          "type" : "string",
+          "format" : "date",
+          "example" : "yyyy-mm-dd",
+          "description" : "Cannot be after \"endDate\"."
+        },
+        "title" : {
+          "type" : "string",
+          "description" : "Min=1, Max=255 (gets trimmed)."
+        }
+      },
+      "title" : "Coupon",
+      "description" : "Title within the same Company must be unique.\n\nOwned and managed by Company.\nOwned by Customer."
+    },
+    "CouponRequest" : {
+      "type" : "object",
+      "properties" : {
+        "amount" : {
+          "type" : "integer",
+          "format" : "int32",
+          "example" : 0,
+          "description" : "Min=0, Max=2147483647."
+        },
+        "category" : {
+          "type" : "string",
+          "enum" : [ "ATTRACTION", "AUTOMOBILE", "ELECTRICITY", "FOOD", "GAMING", "RESTAURANT", "SPORT", "VACATION" ]
+        },
+        "description" : {
+          "type" : "string",
+          "description" : "Min=1, Max=255 (gets trimmed)."
+        },
+        "endDate" : {
+          "type" : "string",
+          "format" : "date",
+          "example" : "yyyy-mm-dd",
+          "description" : "Cannot be in the past."
+        },
+        "id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "example" : 0,
+          "description" : "Auto-incremented."
+        },
+        "image" : {
+          "type" : "string",
+          "description" : "Min=1, Max=255 (spaces gets removed)."
+        },
+        "price" : {
+          "type" : "number",
+          "format" : "double",
+          "example" : 0.0,
+          "description" : "Min=0, Max=∞."
+        },
+        "startDate" : {
+          "type" : "string",
+          "format" : "date",
+          "example" : "yyyy-mm-dd",
+          "description" : "Cannot be after \"endDate\"."
+        },
+        "title" : {
+          "type" : "string",
+          "description" : "Min=1, Max=255 (gets trimmed)."
+        }
+      },
+      "title" : "CouponRequest"
+    },
+    "Customer" : {
+      "type" : "object",
+      "properties" : {
+        "coupons" : {
+          "type" : "array",
+          "description" : "Only as response.",
+          "items" : {
+            "$ref" : "#/definitions/Coupon"
+          }
+        },
+        "email" : {
+          "type" : "string",
+          "example" : "email@email.com",
+          "description" : "Min=1, Max=255 (spaces gets removed).\nMust be in email format.\nGets lower-cased."
+        },
+        "firstName" : {
+          "type" : "string",
+          "description" : "Min=1, Max=255 (gets trimmed)."
+        },
+        "id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "Auto-incremented."
+        },
+        "lastName" : {
+          "type" : "string",
+          "description" : "Min=1, Max=255 (gets trimmed)."
+        },
+        "password" : {
+          "type" : "string",
+          "description" : "Min=1, Max=255."
+        },
+        "role" : {
+          "type" : "string",
+          "enum" : [ "ADMIN", "COMPANY", "CUSTOMER" ]
+        }
+      },
+      "title" : "Customer",
+      "description" : "Email between users must be uinque.\n\nOwns and purchases coupons."
+    },
+    "ExceptionResponse" : {
+      "type" : "object",
+      "properties" : {
+        "errorCode" : {
+          "type" : "string",
+          "example" : "CMP-001.001",
+          "description" : "Exception error code."
+        },
+        "response" : {
+          "type" : "string",
+          "description" : "Exception message."
+        }
+      },
+      "title" : "ExceptionResponse",
+      "description" : "Throws exceptions, for unsuccessful responses.\n\nException List:\r\n\nexception:\r\nCustomExceptionList - LST-000.000\r\n\r\ncompanyException:\r\nCompanyAlreadyExistsException - CMP-001.001\r\nCompanyDuplicateValueException - CMP-001.002\r\nCompanyIsEmptyException - CMP-001.003\r\nCompanyIsNullException - CMP-001.004\r\nCompanyNotFoundException - CMP-001.005\r\nCompanyNullValueException - CMP-001.006\r\n\r\ncouponException:\r\nCouponAlreadyExistsException - CPN-002.001\r\nCouponDuplicateValueException - CPN-002.002\r\nCouponExpiredModifyException - CPN-002.003\r\nCouponExpiredPurchaseException - CPN-002.004\r\nCouponIsEmptyException - CPN-002.005\r\nCouponIsNullException - CPN-002.006\r\nCouponModifyNoStockException - CPN-002.007\r\nCouponNegativePriceException - CPN-002.008\r\nCouponNotFoundException - CPN-002.009\r\nCouponNullValueException - CPN-002.010\r\nCouponOwnedException - CPN-002.011\r\nCouponPurchaseNoStockException - CPN-002.012\r\n\r\ncustomerException:\r\nCustomerAlreadyExistsException - CST-003.001\r\nCustomerDuplicateValueException- CST-003.002\r\nCustomerIsEmptyException - CST-003.003\r\nCustomerIsNullException - CST-003.004\r\nCustomerNotFoundException - CST-003.005\r\nCustomerNullValueException - CST-003.006\r\n\r\nloggerException:\r\nLoggerIsEmptyException - LGR-004.001\r\n\r\nloginException:\r\nInvalidLoginException - LGN-005.001\r\nNullLoginException - LGN-005.002\r\nMismatchLoginException - LGN-005.003\r\n\r\nUserEmailAlreadyExists - USR-006.001"
+    },
+    "GrantedAuthority" : {
+      "type" : "object",
+      "properties" : {
+        "authority" : {
+          "type" : "string"
+        }
+      },
+      "title" : "GrantedAuthority"
+    },
+    "JwtResponse" : {
+      "type" : "object",
+      "properties" : {
+        "authorities" : {
+          "type" : "array",
+          "description" : "Authorities of the user.\n\nAuthority List:\r\n\nCUSTOMER\r\nCOMPANY\r\nADMIN",
+          "items" : {
+            "$ref" : "#/definitions/GrantedAuthority"
+          }
+        },
+        "token" : {
+          "type" : "string",
+          "description" : "Jwt token of the user."
+        },
+        "type" : {
+          "type" : "string",
+          "example" : "Bearer",
+          "description" : "Will always be \"Bearer\"."
+        },
+        "username" : {
+          "type" : "string",
+          "description" : "Email of the user."
+        }
+      },
+      "title" : "JwtResponse",
+      "description" : "Jwt response for the Jwt token."
+    },
+    "LocalTime" : {
+      "type" : "object",
+      "properties" : {
+        "hour" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "minute" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "nano" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "second" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      },
+      "title" : "LocalTime"
+    },
+    "Log" : {
+      "type" : "object",
+      "properties" : {
+        "action" : {
+          "type" : "string",
+          "description" : "What was the action.",
+          "enum" : [ "CREATE", "DELETE", "LOGIN", "PURCHASE", "UPDATE" ]
+        },
+        "date" : {
+          "type" : "string",
+          "format" : "date",
+          "description" : "When the action happened (date)."
+        },
+        "entity" : {
+          "type" : "string",
+          "description" : "Who the action affected.",
+          "enum" : [ "ADMIN", "COMPANY", "COUPON", "CUSTOMER", "LOGGER" ]
+        },
+        "entityId" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "ID of who the action affected."
+        },
+        "executiveEntity" : {
+          "type" : "string",
+          "description" : "Who did the action.\nnull=executiveEntity is not a user.",
+          "enum" : [ "ADMIN", "COMPANY", "CUSTOMER" ]
+        },
+        "executiveId" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "ID of who did the action.\n0=executiveEntity is not a user.\n-1=executiveEntity doesn't exists."
+        },
+        "id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "Log ID."
+        },
+        "newAttributes" : {
+          "type" : "string",
+          "description" : "Attributes after the action."
+        },
+        "oldAttributes" : {
+          "type" : "string",
+          "description" : "Attributes before the action."
+        },
+        "time" : {
+          "description" : "When the action happened (time).",
+          "$ref" : "#/definitions/LocalTime"
+        }
+      },
+      "title" : "Log",
+      "description" : "Logger class, for Log type responses."
+    },
+    "SuccessResponse" : {
+      "type" : "object",
+      "properties" : {
+        "response" : {
+          "type" : "string",
+          "description" : "Success message."
+        }
+      },
+      "title" : "SuccessResponse",
+      "description" : "String wrapper class, for successful responses."
+    }
+  }
+}

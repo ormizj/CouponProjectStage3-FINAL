@@ -1,0 +1,9 @@
+Admin Login:
+email- admin@admin.com
+password- admin
+
+Company Login:
+password- 1234
+
+Customer Login:
+password- 4321

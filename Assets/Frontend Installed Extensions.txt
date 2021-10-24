@@ -1,0 +1,6 @@
+[React Additional Installations]
+Bootstrap
+Formik
+Yup
+React Router
+React Idle
