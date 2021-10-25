@@ -117,11 +117,11 @@ public final class CouponExpirationDailyJob implements Runnable, TimeComparisonU
 	 * calls the {@code deleteCoupons()} method, to delete expired
 	 * {@link com.jbc.model.Coupon}.
 	 * 
-	 * @see #deleteCoupons()
+	 * @see #deleteExpiredCoupons()
 	 */
 	@Override
 	public void run() {
-		deleteCoupons();
+		deleteExpiredCoupons();
 	}
 
 	/**
@@ -131,7 +131,7 @@ public final class CouponExpirationDailyJob implements Runnable, TimeComparisonU
 	 * @see util#generalUtil#StringClass
 	 * @see repository#CouponRepository
 	 */
-	private void deleteCoupons() {
+	private void deleteExpiredCoupons() {
 		List<Coupon> coupons = couponRepo.findAll();
 		coupons.forEach(coupon -> {
 			synchronized (StringClass.COUPON_ID_SYNC + coupon.getId()) {
@@ -156,7 +156,7 @@ public final class CouponExpirationDailyJob implements Runnable, TimeComparisonU
 	 */
 	@Override
 	public void afterPropertiesSet() throws Exception {
-		deleteCoupons();
+		deleteExpiredCoupons();
 		String classPath = PathUtil.COUPON_EXPIRATION_DAILY_JOB_PATH.toString();
 		String className = PathUtil.COUPON_EXPIRATION_DAILY_JOB_NAME.toString();
 		System.out.println(getDate() + "  " + classPath + " : Starting the " + className + " thread...");
