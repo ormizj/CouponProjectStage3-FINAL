@@ -2,11 +2,11 @@ import './customer-signup.css'
 import { Formik, Field, Form } from 'formik'
 import AuthenticationService from '../../../../../../services/AuthenticationService'
 import history from './../../../../history'
-import { isEmail } from '../../../../../../utils/checkUtil'
+import { emailRegex } from '../../../../../../utils/checkUtil'
 
 export default function CustomerSignup() {
 
-    const isEmail = isEmail()
+    const isEmail = emailRegex()
 
     const closeDiv = () => {
         if (window.confirm('Are you sure you want to close this window?'))

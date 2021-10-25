@@ -14,7 +14,7 @@ export const isMinimum = (value, min) => {
 }
 
 /*returns the regex of an email format*/
-export const isEmail = () => {
+export const emailRegex = () => {
     //eslint-disable-next-line
     const emailFormat = '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$'
     return (emailFormat)

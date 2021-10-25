@@ -2,11 +2,11 @@ import { Formik, Field, Form } from 'formik'
 import AuthenticationService from '../../../../../../services/AuthenticationService'
 import './company-signup.css'
 import history from './../../../../history'
-import { isEmail } from "./../../../../../../utils/checkUtil"
+import { emailRegex } from "./../../../../../../utils/checkUtil"
 
 export default function CompanySignup() {
 
-    const isEmail = isEmail()
+    const isEmail = emailRegex()
 
     const closeDiv = () => {
         if (window.confirm('Are you sure you want to close this window?'))

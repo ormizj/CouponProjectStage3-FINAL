@@ -3,11 +3,11 @@ import history from './../../../../../../history'
 import { Formik, Form, Field } from 'formik'
 import AdminService from './../../../../../../../../services/user-services/AdminService'
 import AuthenticationService from '../../../../../../../../services/AuthenticationService'
-import { isEmail } from '../../../../../../../../utils/checkUtil'
+import { emailRegex } from '../../../../../../../../utils/checkUtil'
 
 export default function AdminCreateCompany(props) {
 
-    const isEmail = isEmail()
+    const isEmail = emailRegex()
 
     const closeDiv = () => {
         if (window.confirm('Are you sure you want to close this window?'))

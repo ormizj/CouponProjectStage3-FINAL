@@ -5,11 +5,11 @@ import companyImage from './Generic Company.jpeg'
 import CompanyService from './../../../../../../services/user-services/CompanyService'
 import AdminService from '../../../../../../services/user-services/AdminService'
 import AuthenticationService from '../../../../../../services/AuthenticationService'
-import { isEmail } from '../../../../../../utils/checkUtil'
+import { emailRegex } from '../../../../../../utils/checkUtil'
 
 export default function CompanyProfile() {
 
-    const isEmail = isEmail()
+    const isEmail = emailRegex()
     const [company, setCompany] = useState({ email: '', name: '', password: '', id: '' })
 
     const getCompanyDetails = () => {

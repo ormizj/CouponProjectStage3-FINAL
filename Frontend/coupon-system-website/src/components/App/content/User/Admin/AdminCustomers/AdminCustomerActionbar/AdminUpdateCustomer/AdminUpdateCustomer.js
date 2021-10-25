@@ -3,11 +3,11 @@ import history from '../../../../../../history'
 import { Formik, Form, Field } from 'formik'
 import AdminService from '../../../../../../../../services/user-services/AdminService'
 import AuthenticationService from '../../../../../../../../services/AuthenticationService'
-import { isEmail } from '../../../../../../../../utils/checkUtil'
+import { emailRegex } from '../../../../../../../../utils/checkUtil'
 
 export default function AdminUpdateCustomer(props) {
 
-    const isEmail = isEmail()
+    const isEmail = emailRegex()
     let valid = true
     let currentRef
     let customer

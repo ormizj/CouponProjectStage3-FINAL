@@ -5,11 +5,11 @@ import CustomerService from '../../../../../../services/user-services/CustomerSe
 import AdminService from '../../../../../../services/user-services/AdminService'
 import { useEffect, useState } from 'react'
 import AuthenticationService from '../../../../../../services/AuthenticationService'
-import { isEmail } from '../../../../../../utils/checkUtil'
+import { emailRegex } from '../../../../../../utils/checkUtil'
 
 export default function CustomerProfile() {
 
-    const isEmail = isEmail()
+    const isEmail = emailRegex()
     const [customer, setCustomer] = useState({ email: '', firstName: '', lastName: '', password: '', id: '' })
 
     const getCustomerDetails = () => {
