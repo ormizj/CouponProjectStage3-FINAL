@@ -85,7 +85,7 @@ public final class CouponExpirationDailyJob implements Runnable, TimeComparisonU
 	}
 
 	/**
-	 * Shuts down the {@code scheduler} thread, tried up to
+	 * Shuts down the {@code scheduler} thread, tries shutdown up to
 	 * {@link com.jbc.util.systemUtil.TerminationWaitTime} {@code MINUTES} value to
 	 * terminate the {@code scheduler} thread.
 	 * 
@@ -114,14 +114,24 @@ public final class CouponExpirationDailyJob implements Runnable, TimeComparisonU
 	}
 
 	/**
-	 * Deletes every {@link com.jbc.model.Coupon} {@code Entity} from the system
-	 * data-base that is expired, based on their {@code endDate} value.
+	 * calls the {@code deleteCoupons()} method, to delete expired
+	 * {@link com.jbc.model.Coupon}.
+	 * 
+	 * @see #deleteCoupons()
+	 */
+	@Override
+	public void run() {
+		deleteCoupons();
+	}
+
+	/**
+	 * Helper method, Deletes every {@link com.jbc.model.Coupon} {@code Entity} from
+	 * the system data-base that is expired, based on their {@code endDate} value.
 	 * 
 	 * @see util#generalUtil#StringClass
 	 * @see repository#CouponRepository
 	 */
-	@Override
-	public void run() {
+	private void deleteCoupons() {
 		List<Coupon> coupons = couponRepo.findAll();
 		coupons.forEach(coupon -> {
 			synchronized (StringClass.COUPON_ID_SYNC + coupon.getId()) {
@@ -146,6 +156,7 @@ public final class CouponExpirationDailyJob implements Runnable, TimeComparisonU
 	 */
 	@Override
 	public void afterPropertiesSet() throws Exception {
+		deleteCoupons();
 		String classPath = PathUtil.COUPON_EXPIRATION_DAILY_JOB_PATH.toString();
 		String className = PathUtil.COUPON_EXPIRATION_DAILY_JOB_NAME.toString();
 		System.out.println(getDate() + "  " + classPath + " : Starting the " + className + " thread...");
