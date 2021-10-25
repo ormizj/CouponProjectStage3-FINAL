@@ -5,11 +5,9 @@ import CustomerService from '../../../../../../services/user-services/CustomerSe
 import AdminService from '../../../../../../services/user-services/AdminService'
 import { useEffect, useState } from 'react'
 import AuthenticationService from '../../../../../../services/AuthenticationService'
-import { emailRegex } from '../../../../../../utils/checkUtil'
 
 export default function CustomerProfile() {
 
-    const isEmail = emailRegex()
     const [customer, setCustomer] = useState({ email: '', firstName: '', lastName: '', password: '', id: '' })
 
     const getCustomerDetails = () => {
@@ -133,7 +131,7 @@ export default function CustomerProfile() {
                                                 <input
                                                     value={values.email}
                                                     onChange={handleChange}
-                                                    pattern={isEmail}
+                                                    pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$'
                                                     type='email'
                                                     title={values.email}
                                                     name='email'

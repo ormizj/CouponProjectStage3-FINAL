@@ -2,11 +2,8 @@ import './customer-signup.css'
 import { Formik, Field, Form } from 'formik'
 import AuthenticationService from '../../../../../../services/AuthenticationService'
 import history from './../../../../history'
-import { emailRegex } from '../../../../../../utils/checkUtil'
 
 export default function CustomerSignup() {
-
-    const isEmail = emailRegex()
 
     const closeDiv = () => {
         if (window.confirm('Are you sure you want to close this window?'))
@@ -87,7 +84,7 @@ export default function CustomerSignup() {
                                 <div className="input-group-text" id='CustomerSignup-email-div' title='Email'>Email</div>
                                 <input
                                     onChange={handleChange}
-                                    pattern={isEmail}
+                                    pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$'
                                     type='email'
                                     title={values.email}
                                     name='email'

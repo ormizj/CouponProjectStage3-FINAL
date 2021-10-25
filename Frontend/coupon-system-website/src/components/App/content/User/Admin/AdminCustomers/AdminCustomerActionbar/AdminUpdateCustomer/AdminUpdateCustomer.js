@@ -3,11 +3,9 @@ import history from '../../../../../../history'
 import { Formik, Form, Field } from 'formik'
 import AdminService from '../../../../../../../../services/user-services/AdminService'
 import AuthenticationService from '../../../../../../../../services/AuthenticationService'
-import { emailRegex } from '../../../../../../../../utils/checkUtil'
 
 export default function AdminUpdateCustomer(props) {
 
-    const isEmail = emailRegex()
     let valid = true
     let currentRef
     let customer
@@ -180,7 +178,7 @@ export default function AdminUpdateCustomer(props) {
                                                         <input
                                                             value={values.email}
                                                             onChange={handleChange}
-                                                            pattern={isEmail}
+                                                            pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$'
                                                             type='email'
                                                             title={values.email}
                                                             name='email'

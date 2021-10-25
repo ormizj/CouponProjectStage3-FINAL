@@ -5,11 +5,9 @@ import companyImage from './Generic Company.jpeg'
 import CompanyService from './../../../../../../services/user-services/CompanyService'
 import AdminService from '../../../../../../services/user-services/AdminService'
 import AuthenticationService from '../../../../../../services/AuthenticationService'
-import { emailRegex } from '../../../../../../utils/checkUtil'
 
 export default function CompanyProfile() {
 
-    const isEmail = emailRegex()
     const [company, setCompany] = useState({ email: '', name: '', password: '', id: '' })
 
     const getCompanyDetails = () => {
@@ -123,7 +121,7 @@ export default function CompanyProfile() {
                                                 <input
                                                     value={values.email}
                                                     onChange={handleChange}
-                                                    pattern={isEmail}
+                                                    pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$'
                                                     type='email'
                                                     title={values.email}
                                                     name='email'

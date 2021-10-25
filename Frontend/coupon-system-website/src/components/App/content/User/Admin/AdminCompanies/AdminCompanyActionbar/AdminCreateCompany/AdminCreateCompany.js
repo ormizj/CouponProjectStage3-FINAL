@@ -3,11 +3,8 @@ import history from './../../../../../../history'
 import { Formik, Form, Field } from 'formik'
 import AdminService from './../../../../../../../../services/user-services/AdminService'
 import AuthenticationService from '../../../../../../../../services/AuthenticationService'
-import { emailRegex } from '../../../../../../../../utils/checkUtil'
 
 export default function AdminCreateCompany(props) {
-
-    const isEmail = emailRegex()
 
     const closeDiv = () => {
         if (window.confirm('Are you sure you want to close this window?'))
@@ -84,7 +81,7 @@ export default function AdminCreateCompany(props) {
                                 <div className="input-group-text" id='AdminAddCompany-email-div' title='Email'>Email</div>
                                 <input
                                     onChange={handleChange}
-                                    pattern={isEmail}
+                                    pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$'
                                     type='email'
                                     title={values.email}
                                     name='email'
